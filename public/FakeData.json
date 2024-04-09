@@ -1,0 +1,50 @@
+[
+    {
+        "id": "1",
+        "text": "Product A",
+        "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "price": 19.99
+    },
+    {
+        "id": "2",
+        "text": "Product B",
+        "details": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "price": 29.99
+    },
+    {
+        "id": "3",
+        "text": "Product C",
+        "details": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        "price": 39.99
+    },
+    {
+        "id": "4",
+        "text": "Product D",
+        "details": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+        "price": 49.99
+    },
+    {
+        "id": "5",
+        "text": "Product E",
+        "details": "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        "price": 59.99
+    },
+    {
+        "id": "6",
+        "text": "Product F",
+        "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+        "price": 69.99
+    },
+    {
+        "id": "7",
+        "text": "Product G",
+        "details": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "price": 79.99
+    },
+    {
+        "id": "8",
+        "text": "Product H",
+        "details": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+        "price": 89.99
+    }
+]
