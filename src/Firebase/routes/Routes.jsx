@@ -6,6 +6,8 @@ import Login from "../../Pages/Home/Login/Login";
 import Register from "../../Pages/Home/Register/Register";
 import Card from "../../Pages/Home/Card/Card";
 import CardDetails from "../../Pages/Home/CardDetails/CardDetails";
+import Update from "../../Pages/Home/Update/Update";
+import User from "../../Pages/Home/User/User";
 
 
 
@@ -40,7 +42,15 @@ const router=createBrowserRouter([
                 element:<CardDetails></CardDetails>,
                 loader : ()=> fetch(`/FakeData.json`)
             },
-            
+            {
+                path:'Update',
+                element:<Update></Update>
+            },
+            {
+                path:'User',
+                element:<User></User>
+            }
+           
           
         ]
     }
