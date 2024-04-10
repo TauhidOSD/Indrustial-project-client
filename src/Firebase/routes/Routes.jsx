@@ -10,6 +10,7 @@ import Update from "../../Pages/Home/Update/Update";
 import User from "../../Pages/Home/User/User";
 import Banner from "../../Pages/Home/Banner/Banner";
 import Footer from "../../Pages/Home/Footer/Footer";
+import Slider from "../../Pages/Home/Slider/Slider";
 
 
 
@@ -59,6 +60,10 @@ const router=createBrowserRouter([
             {
                 path:'footer',
                 element:<Footer></Footer>
+            },
+            {
+                path:'slider',
+                element:<Slider></Slider>
             }
            
           

@@ -7,6 +7,8 @@
         "Area": "5,500 sq fit",
         "Price": "$25,000,00",
         "Status": "Sale"
+       
+       
     },
     {
         "id": "2",
@@ -15,7 +17,11 @@
         "image": "https://i.postimg.cc/43J8HKTk/240-F-293463108-Uy5-Zpn-PN6le0-XEPSjd-Ie6oe-Tf5tk-ICrc.jpg",
         "Area": "13,000 sq fit",
         "Price": "$45,0000",
-        "Status": "Stock"
+        "Status": "Stock",
+        "Member":"https://i.postimg.cc/GhbScPyJ/image.jpg",
+        "name":"Mr.David",
+        "position":"I am a Chip Enginner also most experince Officer"
+
     },
     {
         "id": "3",
@@ -24,7 +30,12 @@
         "image": "https://i.postimg.cc/T1q0PGHY/240-F-300380500-un-X1-DGKdf-K5-HRN0-WI2mhl-Tr-Mh-RLc7lgs.jpg",
         "Area": "45,000 sq fit",
         "Price": "$37,000 ",
-        "Status": "Non-Stock"
+        "Status": "Non-Stock",
+        "Member":"https://i.postimg.cc/YqmjCgB0/image.jpg",
+        
+        "name":"Ms. Alin",
+        "position":"I am expart of Acounting "
+
     },
     {
         "id": "4",
@@ -33,7 +44,11 @@
         "image": "https://i.postimg.cc/RCQLKSXv/240-F-74292168-zzm-Y36-It-JYi46c-MIgg-Ova-P1v4a7-Qnq-Vd.jpg",
         "Area": "56,000 sq fit",
         "Price": "$39,000,00",
-        "Status": "Prepaid"
+        "Status": "Prepaid",
+        "Member":"https://i.postimg.cc/VN4XWM61/image.jpg",
+        "name":"Mr.David Roy",
+        "position":"I am most Senion Indrustrial Officer"
+
     },
     {
         "id": "5",
@@ -42,7 +57,12 @@
         "image": "https://i.postimg.cc/L5NP7sbf/240-F-300559569-73-GECR2og5-Cg-E5y2qg-YOEKM45dv-CPi-ZN.jpg",
         "Area": "38,000,00 sq fit",
         "Price": "$13,00,00",
-        "Status": "Just show"
+        "Status": "Just show",
+        "Member":"https://i.postimg.cc/Y2XGDMMN/image.jpg",
+        "name":"Ms.Maria",
+        "position":"I am a Mannaging Deractor"
+
+
     },
     {
         "id": "6",
@@ -51,6 +71,9 @@
         "image": "https://i.postimg.cc/g2whSmqX/240-F-135408512-303erf7qp-NMb-Dm9tq-Cm-TEqgbkoc-Vp-AQj.jpg",
         "Area": "67,000 sq fit",
         "Price": "$56,000,00 ",
-        "Status": "Booking"
+        "Status": "Booking",
+        "Member":"https://i.postimg.cc/wBfY8fvr/image.jpg",
+        "name":"Ms.Jarin",
+        "position":"I am a Chip guest Officer"
     }
 ]
