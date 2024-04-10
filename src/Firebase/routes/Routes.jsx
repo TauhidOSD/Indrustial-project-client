@@ -9,6 +9,7 @@ import CardDetails from "../../Pages/Home/CardDetails/CardDetails";
 import Update from "../../Pages/Home/Update/Update";
 import User from "../../Pages/Home/User/User";
 import Banner from "../../Pages/Home/Banner/Banner";
+import Footer from "../../Pages/Home/Footer/Footer";
 
 
 
@@ -54,6 +55,10 @@ const router=createBrowserRouter([
             {
                 path:'banner',
                 element:<Banner></Banner>
+            },
+            {
+                path:'footer',
+                element:<Footer></Footer>
             }
            
           
