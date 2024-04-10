@@ -13,12 +13,12 @@ const Card = () => {
   console.log(Cards);
   
   return (
-    <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4">
+    <div className="  grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  gap-4 ">
       {Cards.map((Card) => (
         // <Blog key={Card.id} Card={Card}></Blog>
-		<div key={Card.id} className="max-w-xs rounded-md shadow-md dark:bg-gray-50 dark:text-gray-800">
+		<div key={Card.id} className=" rounded-md shadow-md dark:bg-gray-50 dark:text-gray-800 ">
           <img
-            src="https://source.unsplash.com/random/300x300/?2"
+            src={Card?.image}
             alt=""
             className="object-cover object-center w-full rounded-t-md h-72 dark:bg-gray-500"
           />
@@ -28,8 +28,12 @@ const Card = () => {
                 {Card?.text}
               </h2>
               <p className="dark:text-gray-800">
-                {Card?.details}
+                {Card?.details.slice(0,75) }
               </p>
+            </div>
+            <div className="flex justify-between">
+            <div><h2 className="text-xl font-semibold">Price : {Card?.Price}</h2></div>
+            <div><h2 className="text-xl font-semibold">Area : {Card?.Area}</h2></div>
             </div>
 
             <Link to={`/${Card?.id}`}>

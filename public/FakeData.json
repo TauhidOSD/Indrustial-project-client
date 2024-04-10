@@ -1,50 +1,56 @@
 [
     {
         "id": "1",
-        "text": "Product A",
-        "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-        "price": 19.99
+        "text": "Manufacturing",
+        "details": "Unlock unparalleled productivity potential with our cutting-edge manufacturing facility. Spanning 5,500 square feet, this meticulously designed space is equipped with state-of-the-art technology to streamline every aspect of your production process. From precision engineering to stringent quality control measures, every detail is optimized for maximum efficiency and excellence. Priced at $25,000,00, this facility is currently available for sale, offering a unique opportunity to elevate your manufacturing operations to new heights. Don't miss out on the chance to invest in your future success. Contact us today to schedule a viewing and witness firsthand how our facility can revolutionize your manufacturing endeavors.",
+        "image": "https://i.postimg.cc/Zn79HMWx/240-F-114525500-dy-YXa-J0-D8e-Kqg-Mneq-Pr-Elrgbo-P0-UVe-Dy.jpg",
+        "Area": "5,500 sq fit",
+        "Price": "$25,000,00",
+        "Status": "Sale"
     },
     {
         "id": "2",
-        "text": "Product B",
-        "details": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        "price": 29.99
+        "text": "Huge distribution warehouse",
+        "details": "Optimize your distribution operations with our expansive warehouse spanning 13,000 square feet. Strategically located and meticulously designed, this facility offers ample space for storage and efficient logistics management. Priced at $45,0000 and currently in stock, it presents an excellent investment opportunity for businesses seeking to streamline their supply chain processes. With modern amenities and convenient accessibility, this warehouse is ready to accommodate your growing needs. Don't miss the chance to enhance your distribution processes and improve operational efficiency. Contact us now to secure this essential asset for your business.",
+        "image": "https://i.postimg.cc/43J8HKTk/240-F-293463108-Uy5-Zpn-PN6le0-XEPSjd-Ie6oe-Tf5tk-ICrc.jpg",
+        "Area": "13,000 sq fit",
+        "Price": "$45,0000",
+        "Status": "Stock"
     },
     {
         "id": "3",
-        "text": "Product C",
-        "details": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-        "price": 39.99
+        "text": "Modern industrial factory",
+        "details": "Elevate your production capabilities with our modern industrial factory, covering an impressive 45,000 square feet. Designed for maximum efficiency and flexibility, this facility is equipped with the latest technology to meet the diverse demands of today's manufacturing landscape. Priced at $37,000 and currently not in stock, this factory offers a rare opportunity for businesses looking to expand their operations. From automotive to electronics, our versatile space is ready to accommodate a wide range of industries. Don't miss out on the chance to position your business for success. Contact us today to schedule a tour and explore the endless possibilities that await you.",
+        "image": "https://i.postimg.cc/T1q0PGHY/240-F-300380500-un-X1-DGKdf-K5-HRN0-WI2mhl-Tr-Mh-RLc7lgs.jpg",
+        "Area": "45,000 sq fit",
+        "Price": "$37,000 ",
+        "Status": "Non-Stock"
     },
     {
         "id": "4",
-        "text": "Product D",
-        "details": "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-        "price": 49.99
+        "text": "Blue industrial pump",
+        "details": "Experience unparalleled efficiency with our blue industrial pump, ideal for a variety of industrial applications. Priced at $39,000,00 and prepaid, it's ready for immediate use to enhance your industrial processes. Contact us now to streamline your operations with this reliable equipment.",
+        "image": "https://i.postimg.cc/RCQLKSXv/240-F-74292168-zzm-Y36-It-JYi46c-MIgg-Ova-P1v4a7-Qnq-Vd.jpg",
+        "Area": "56,000 sq fit",
+        "Price": "$39,000,00",
+        "Status": "Prepaid"
     },
     {
         "id": "5",
-        "text": "Product E",
-        "details": "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-        "price": 59.99
+        "text": "Industrial view at oil refinery",
+        "details": "Indulge in the mesmerizing view of an operational oil refinery, spanning 38,000 square feet. Priced at $13,00,00, this scenic spot is available for viewing, offering a unique perspective on industrial operations. Contact us to schedule a visit and experience the captivating ambiance firsthand.",
+        "image": "https://i.postimg.cc/L5NP7sbf/240-F-300559569-73-GECR2og5-Cg-E5y2qg-YOEKM45dv-CPi-ZN.jpg",
+        "Area": "38,000,00 sq fit",
+        "Price": "$13,00,00",
+        "Status": "Just show"
     },
     {
         "id": "6",
-        "text": "Product F",
-        "details": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-        "price": 69.99
-    },
-    {
-        "id": "7",
-        "text": "Product G",
-        "details": "Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        "price": 79.99
-    },
-    {
-        "id": "8",
-        "text": "Product H",
-        "details": "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-        "price": 89.99
+        "text": "Interior metal manufacturing",
+        "details": "Unlock the potential of your metal manufacturing processes with our spacious 67,000 square feet facility. Priced at $56,000,00 and open for booking, it's designed to deliver precision and efficiency for your operations. Contact us now to secure your spot in this cutting-edge manufacturing space and elevate your metalworking capabilities.",
+        "image": "https://i.postimg.cc/g2whSmqX/240-F-135408512-303erf7qp-NMb-Dm9tq-Cm-TEqgbkoc-Vp-AQj.jpg",
+        "Area": "67,000 sq fit",
+        "Price": "$56,000,00 ",
+        "Status": "Booking"
     }
 ]

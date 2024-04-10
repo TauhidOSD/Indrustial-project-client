@@ -9,7 +9,7 @@ const DaisyNav = () => {
 
 </>
     return (
-        <div className="navbar bg-base-100">
+        <div className="navbar bg-base-100 p-8">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -20,7 +20,7 @@ const DaisyNav = () => {
             {links}
             </ul>
           </div>
-          <a className="btn btn-ghost text-xl">daisyUI</a>
+          <a className="btn btn-ghost text-4xl font-bold  ">Indrusto</a>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
@@ -28,7 +28,7 @@ const DaisyNav = () => {
           </ul>
         </div>
         <div className="navbar-end">
-          <Link to={'/Login'} className="btn">Login</Link>
+          <Link to={'/Login'} className="btn bg-pink-500 text-2xl">Login</Link>
         </div>
       </div>
     );

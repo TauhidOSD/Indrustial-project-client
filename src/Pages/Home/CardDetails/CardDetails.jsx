@@ -19,9 +19,9 @@ const CardDetails = () => {
     <div>
       <div>
         <div className="w-full mb-10">
-          <div className=" w-[60%] mx-auto  rounded-md shadow-md dark:bg-gray-50 dark:text-gray-800">
+          <div className=" lg:w-[60%] md:w-full mx-auto  rounded-md shadow-md dark:bg-gray-50 dark:text-gray-800">
             <img
-              src="https://source.unsplash.com/random/300x300/?2"
+              src={data?.image}
               alt=""
               className="object-cover object-center w-full rounded-t-md h-72 dark:bg-gray-500"
             />
@@ -32,13 +32,27 @@ const CardDetails = () => {
                 </h2>
                 <p className="dark:text-gray-800">{data?.details}</p>
               </div>
+              <div>
+                <h2 className="text-xl font-semibold">Area : {data?.Area}</h2>
+                <h2 className="text-xl font-semibold">Status : {data?.Status}</h2>
+                <div><h2 className="text-xl">Facilities:</h2></div>
+                <ul >
+                  <li>Assembly lines</li>
+                  <li>Quality Control labs</li>
+                  <li>Employee facilities</li>
+                  
+                </ul>
+                <h2 className="text-xl font-semibold">Price : {data?.Price}</h2>
+                
+              </div>
+              
 
               <button
                 type="button"
-                className="bg-pink-500 flex items-center justify-center w-full p-3 font-semibold tracking-wide rounded-md dark:bg-violet-600 dark:text-gray-50"
+                className="text-3xl bg-pink-500 flex items-center justify-center w-full p-3 font-semibold tracking-wide rounded-md dark:bg-violet-600 dark:text-gray-50"
                 fdprocessedid="led2je"
               >
-                Read more
+                Buy Now
               </button>
             </div>
           </div>
