@@ -10,13 +10,15 @@ const Slider = () => {
   }, []);
   console.log(Cards);
   return (
-    <div className="flex justify-center px-12 mb-4 ">
+    <div className="flex justify-center Lg:px-12 mb-4 md:px-2">
       <button class="btn btn-active btn-secondary lg:text-xl md:text-sm ">
         Engineers:
       </button>
       <Marquee pauseOnHover={true} speed={100}>
         {Cards.map((Card) => (
           <div key={Card?.id}>
+            <div className="flex justify-center items-center gap-4 font-semibold" >
+              <div><h2 className="text-xl">{Card?.position}</h2></div>
             <div className="items-center justify-center">
               <img
                 className="rounded-full w-[30%]  items-center justify-center gap-x-36"
@@ -25,6 +27,7 @@ const Slider = () => {
               />
 
               <h2 className="text-xl">{Card?.name} </h2>
+            </div>
             </div>
             
 

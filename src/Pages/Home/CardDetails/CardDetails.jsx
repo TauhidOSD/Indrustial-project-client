@@ -34,18 +34,19 @@ const CardDetails = () => {
               </div>
               <div>
                 <h2 className="text-xl font-semibold">Area : {data?.Area}</h2>
-                <h2 className="text-xl font-semibold">Status : {data?.Status}</h2>
-                <div><h2 className="text-xl">Facilities:</h2></div>
-                <ul >
+                <h2 className="text-xl font-semibold">
+                  Status : {data?.Status}
+                </h2>
+                <div>
+                  <h2 className="text-xl">Facilities:</h2>
+                </div>
+                <ul>
                   <li>Assembly lines</li>
                   <li>Quality Control labs</li>
                   <li>Employee facilities</li>
-                  
                 </ul>
                 <h2 className="text-xl font-semibold">Price : {data?.Price}</h2>
-                
               </div>
-              
 
               <button
                 type="button"
@@ -58,8 +59,11 @@ const CardDetails = () => {
           </div>
         </div>
       </div>
-      <Link to="/"><div className="text-center mt-4"><button className="btn btn-outline btn-error">Home</button></div></Link>
-      
+      <Link to="/">
+        <div className="text-center mt-4">
+          <button className="btn btn-outline btn-error">Home</button>
+        </div>
+      </Link>
     </div>
   );
 };
