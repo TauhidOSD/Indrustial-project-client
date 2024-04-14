@@ -1,98 +1,269 @@
-import { Link } from "react-router-dom";
-import { useForm } from "react-hook-form";
-import UseAuth from "../../../Hooks/UseAuth";
-import SocialLogin from "../SocialLogin/SocialLogin";
+
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { FaGoogle } from "react-icons/fa";
+import { useContext, useState } from "react";
+
+import { GoogleAuthProvider } from "firebase/auth";
+import Swal from 'sweetalert2'
+import { AuthContext } from "../../../FirebaseProvider/FirebaseProvider";
+import { GithubAuthProvider } from "firebase/auth/cordova";
 
 const Login = () => {
-  const { signInUser } = UseAuth();
+    
+    const { login, googleLogin, setUser,GitHubLogin, } = useContext(AuthContext);
+    const [show, setShow] = useState(false);
+    const [error, setError] = useState("");
+    const [success, setSuccess] = useState("");
+    const location = useLocation();
+    const navigate = useNavigate();
+    const from = location.state?.from?.pathname || "/";
+    const provider = new GoogleAuthProvider();
+    const GitHubProvider =new GithubAuthProvider();
+    // login with email & pass
+    const handleLogin = (event) => {
+        event.preventDefault();
+        setError("");
+        setSuccess("");
+        // console.log(event);
+        const form = event.target;
+        const email = form.email.value;
+        const password = form.password.value;
+        login(email, password)
+            .then((result) => {
+                // eslint-disable-next-line no-unused-vars
+                const loggedUser = result.user;
+                // console.log(loggedUser);
+                navigate(from)
+                form.reset();
+                Swal.fire({
+                    title: 'success!',
+                    text: 'Login Succesfull',
+                    icon: 'success',
+                    confirmButtonText: 'Cool'
+                })
+            })
+            .catch((error) => {
+                // console.log(error.message);
+                setError(error.message);
+            });
+    };
 
-  const {
-    register,
-    handleSubmit,
+    // login with google
+    const handleGoogleLogin = () => {
+        setError("");
+        setSuccess("");
 
-    formState: { errors },
-  } = useForm();
-  const onSubmit = (data) => {
-    const { email, password } = data;
-    signInUser(email, password).then((result) => {
-      console.log(result.user);
-    })
-    .catch(error=>{
-      console.log(error)
-    })
+        googleLogin(provider)
+            .then((result) => {
+                const user = result.user;
+                navigate(from)
+                setUser(user);
+                // console.log(user);
+                Swal.fire({
+                    title: 'success!',
+                    text: 'Login Succesfull',
+                    icon: 'success',
+                    confirmButtonText: 'OK'
+                })
+            })
+            .catch((error) => {
+                setError(error.message);
+            });
+    };
+
+    //github login
+    const handleGitHubLogin = () => {
+      setError("");
+      setSuccess("");
+
+      GitHubLogin(GitHubProvider)
+          .then((result) => {
+              const user = result.user;
+              navigate(from)
+              setUser(user);
+              // console.log(user);
+              Swal.fire({
+                  title: 'success!',
+                  text: 'Login Succesfull',
+                  icon: 'success',
+                  confirmButtonText: 'OK'
+              })
+          })
+          .catch((error) => {
+              setError(error.message);
+          });
   };
-  return (
-    <div className="hero min-h-screen bg-base-200">
-      <div className="hero-content flex-col lg:flex-row-reverse">
-        <div className="text-center lg:text-left">
-          <h1 className="text-5xl font-bold">Login now!</h1>
-          <p className="py-6">
-            Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
-            excepturi exercitationem quasi. In deleniti eaque aut repudiandae et
-            a id nisi.
-          </p>
+
+    return (
+        <div className="mt-10 mb-10">
+            <div className="hero-content">
+
+                <div className="card w-full max-w-sm shadow-2xl bg-base-100">
+
+                    <div className="p-10">
+                        <h1 className="text-3xl font-bold text-center mb-2">Login</h1>
+                        <form onSubmit={handleLogin}>
+                            <div className="form-control">
+                                <label className="label">
+                                    <span className="label-text">Email</span>
+                                </label>
+                                <input type="text" placeholder="email" name="email" className="input input-bordered" required />
+                            </div>
+                            <div className="form-control">
+                                <label className="label">
+                                    <span className="label-text">Password</span>
+                                </label>
+                                <input type={show ? "text" : "password"} placeholder="password" name="password" className="input input-bordered" required />
+
+                            </div>
+                            <p className="mt-2" onClick={() => setShow(!show)}>
+                                <span className=" font-bold ">
+                                    {show ? <span>Hide Password</span> : <span>Show Password</span>}
+                                </span>
+                            </p>
+                            <p className="text-green-700">
+                                {success}
+                            </p>
+                            <br />
+                            <p className="text-red-700 ">
+                                {error}
+                            </p>
+                            <div className="form-control mt-2">
+
+                                <input className="btn btn-outline text-orange-400" type="submit" value="Log in" />
+                            </div>
+                        </form>
+
+
+                        <p className="mt-2 mb-2" > <span className="font-semibold"> Did not have an Account?</span>  <Link className="text-orange-400 font-bold" to="/register">Register</Link></p>
+                    <div className="text-center">
+                        <span className="text-gray-400">or</span>
+                    </div>
+                    <div className=" mx-auto mt-2">
+                        <div className="  ">
+                        <button
+                            onClick={handleGoogleLogin}
+                            className=" px-6  py-3 btn btn-outline text-orange-400 rounded-md mb-4"
+                        >
+                            <FaGoogle className=" text-2xl mr-5 "  /> Sign in with Google
+                        </button>
+                        <button
+                            onClick={handleGitHubLogin}
+                            className=" px-6  py-3 btn btn-outline text-orange-400 rounded-md btn-error"
+                        >
+                            Sign in with GitHub
+                        </button>
+                        </div>
+                    </div>
+                    </div>
+
+                </div>
+            </div>
         </div>
-        <div className="text-center lg:text-left"></div>
-        <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-          <form onSubmit={handleSubmit(onSubmit)} className="card-body">
-            <div className="form-control">
-              <label className="label">
-                <span className="label-text">Email</span>
-              </label>
-              <input
-                type="email"
-                placeholder="email"
-                className="input input-bordered"
-                required
-                {...register("email", { required: true })}
-              />
-              {errors.email && (
-                <span className="text-red-500">This field is required</span>
-              )}
-            </div>
-            <div className="form-control">
-              <label className="label">
-                <span className="label-text">Password</span>
-              </label>
-              <div>
-                <input
-                  type="password"
-                  placeholder="password"
-                  className="input input-bordered"
-                  required
-                  {...register("password", { required: true })}
-                />
-                {errors.password && (
-                  <span className="text-red-500">This field is required</span>
-                )}
-              </div>
-              <div className="flex justify-between">
-                <label className="label">
-                  <a href="#" className="label-text-alt link link-hover">
-                    Forgot password?
-                  </a>
-                </label>
-                <label className="label ">
-                  <Link
-                    to={"/Register"}
-                    href="#"
-                    className="label-text-alt link link-hover text-green-700 font-semibold"
-                  >
-                    Create acount...
-                  </Link>
-                </label>
-              </div>
-            </div>
-            
-            <div className="form-control mt-6">
-              <button className="btn btn-primary">Login</button>
-            </div>
-          </form>
-          <SocialLogin></SocialLogin>
-        </div>
-      </div>
-    </div>
-  );
+    );
 };
 
 export default Login;
+
+
+
+
+// import { Link } from "react-router-dom";
+// import { useForm } from "react-hook-form";
+// import UseAuth from "../../../Hooks/UseAuth";
+// import SocialLogin from "../SocialLogin/SocialLogin";
+
+// const Login = () => {
+//   const { signInUser } = UseAuth();
+
+//   const {
+//     register,
+//     handleSubmit,
+
+//     formState: { errors },
+//   } = useForm();
+//   const onSubmit = (data) => {
+//     const { email, password } = data;
+//     signInUser(email, password)
+//       .then((result) => {
+//         // console.log(result.user);
+//       })
+//       .catch((error) => {
+//         console.log(error);
+//       });
+//   };
+//   return (
+//     <div className="hero min-h-screen bg-base-200">
+//       <div className="hero-content flex-col lg:flex-row-reverse">
+//         <div className="text-center lg:text-left">
+//           <h1 className="text-5xl font-bold">Login now!</h1>
+//           <p className="py-6">
+//             Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
+//             excepturi exercitationem quasi. In deleniti eaque aut repudiandae et
+//             a id nisi.
+//           </p>
+//         </div>
+//         <div className="text-center lg:text-left"></div>
+//         <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+//           <form onSubmit={handleSubmit(onSubmit)} className="card-body">
+//             <div className="form-control">
+//               <label className="label">
+//                 <span className="label-text">Email</span>
+//               </label>
+//               <input
+//                 type="email"
+//                 placeholder="email"
+//                 className="input input-bordered"
+//                 required
+//                 {...register("email", { required: true })}
+//               />
+//               {errors.email && (
+//                 <span className="text-red-500">This field is required</span>
+//               )}
+//             </div>
+//             <div className="form-control">
+//               <label className="label">
+//                 <span className="label-text">Password</span>
+//               </label>
+//               <div>
+//                 <input
+//                   type="password"
+//                   placeholder="password"
+//                   className="input input-bordered"
+//                   required
+//                   {...register("password", { required: true })}
+//                 />
+//                 {errors.password && (
+//                   <span className="text-red-500">This field is required</span>
+//                 )}
+//               </div>
+//               <div className="flex justify-between">
+//                 <label className="label">
+//                   <a href="#" className="label-text-alt link link-hover">
+//                     Forgot password?
+//                   </a>
+//                 </label>
+//                 <label className="label ">
+//                   <Link
+//                     to={"/Register"}
+//                     href="#"
+//                     className="label-text-alt link link-hover text-green-700 font-semibold"
+//                   >
+//                     Create acount...
+//                   </Link>
+//                 </label>
+//               </div>
+//             </div>
+
+//             <div className="form-control mt-6">
+//               <button className="btn btn-primary">Login</button>
+//             </div>
+//           </form>
+//           <SocialLogin></SocialLogin>
+//         </div>
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default Login;

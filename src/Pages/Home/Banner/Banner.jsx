@@ -1,5 +1,11 @@
+import { useContext } from "react";
+import { AuthContext } from "../../../FirebaseProvider/FirebaseProvider";
+
 const Banner = () => {
+  // const { user } = useContext(AuthContext);
+  // console.log(user);
   return (
+
     <div>
       <img
         className="w-full lg:h-[550px] md:h-[350px] rounded-2xl "

@@ -1,4 +1,4 @@
-import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
+import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
 import { createContext, useEffect, useState } from "react";
 import auth from "../Firebase/Firebase.config";
 
@@ -14,22 +14,53 @@ const googleProvider = new GoogleAuthProvider();
 const GitHubProvider = new GithubAuthProvider();
 
 const FirebaseProvider = ({children}) => {
-    
- //create user
- const createUser=(email,password)=>{
-   return createUserWithEmailAndPassword(auth,email,password)
- }
+   
+  const [user, setUser] = useState(null);
+  const [loader, setLoader] = useState(true);
 
- //sign in User
- const signInUser =(email, password)=>{
-  return signInWithEmailAndPassword(auth, email, password)
 
- }
-
- //google login
- const googleLogin=()=>{
- return signInWithPopup(auth, googleProvider)
- }
+useEffect(() => {
+  const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+    setUser(currentUser);
+    setLoader(false);
+  });
+  return () => {
+    return unsubscribe();
+  };
+}, []);
+// console.log(user);
+//  register with email and pass
+const createUser = (email, password) => {
+  setLoader(true);
+  return createUserWithEmailAndPassword(auth, email, password);
+};
+const updateUserData = (user, name, photo) => {
+  updateProfile(user, {
+    displayName: name,
+    photoURL: photo,
+  })
+    .then(() => {
+      alert("Successfull");
+    })
+    .catch((error) => {
+      console.log(error.message);
+    });
+};
+// login with email & pass
+const login = (email, password) => {
+  setLoader(true);
+  return signInWithEmailAndPassword(auth, email, password);
+};
+// logOut
+const logout = () => {
+  setLoader(true);
+  return signOut(auth);
+};
+// google login
+const googleLogin = (provider) => {
+  setLoader(true);
+  return signInWithPopup(auth,provider);
+};
  //GitHub login
  const GitHubLogin=()=>{
   return signInWithPopup(auth,GitHubProvider)
@@ -41,7 +72,7 @@ const FirebaseProvider = ({children}) => {
  
 
 
- const [user,setUser]=useState(null)
+ 
  console.log(user);
  useEffect(()=>{
   onAuthStateChanged(auth, (user) => {
@@ -53,11 +84,19 @@ const FirebaseProvider = ({children}) => {
 
 
     const allValues ={
-      createUser,
-      signInUser,
-      googleLogin,
+      // createUser,
+      // signInUser,
+      // googleLogin,
       GitHubLogin,
-      logOut,
+      user,
+    loader,
+    createUser,
+    updateUserData,
+    login,
+    logout,
+    googleLogin,
+      // logOut,
+      // user,
       
     }
   return (
