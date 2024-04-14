@@ -7,6 +7,7 @@ const Root = () => {
         <div>
             <DaisyNav></DaisyNav>
             
+            
             <Outlet></Outlet>
             <Footer></Footer>
         </div>

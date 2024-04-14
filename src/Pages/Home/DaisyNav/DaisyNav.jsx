@@ -1,4 +1,5 @@
 import { Link, NavLink } from "react-router-dom";
+import UseAuth from "../../../Hooks/UseAuth";
 
 
 const DaisyNav = () => {
@@ -8,6 +9,7 @@ const DaisyNav = () => {
   <li><NavLink to="/User">User Profile</NavLink></li>
 
 </>
+const {logOut,user}=UseAuth()
     return (
         <div className="navbar bg-base-100 lg:p-8 md:px-2">
         <div className="navbar-start">
@@ -27,8 +29,13 @@ const DaisyNav = () => {
              {links}
           </ul>
         </div>
+        <div className="flex justify-around ml-60">
+        <div className="w-10 rounded-sm ">
+          <img alt="Tailwind CSS Navbar component" src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+        </div>
         <div className="navbar-end">
           <Link to={'/Login'} className="btn bg-pink-500 text-2xl">Login</Link>
+        </div>
         </div>
       </div>
     );

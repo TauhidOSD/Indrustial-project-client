@@ -1,4 +1,4 @@
-import { createBrowserRouter } from "react-router-dom";
+import {createBrowserRouter } from "react-router-dom";
 import Root from "../../layout/Root";
 import Home from "../../Pages/Home/Home";
 import DaisyNav from "../../Pages/Home/DaisyNav/DaisyNav";
@@ -11,13 +11,18 @@ import User from "../../Pages/Home/User/User";
 import Banner from "../../Pages/Home/Banner/Banner";
 import Footer from "../../Pages/Home/Footer/Footer";
 import Slider from "../../Pages/Home/Slider/Slider";
+import NotFound from "../../Pages/Home/NotFound/NotFound";
+import FirebaseProvider from "../../FirebaseProvider/FirebaseProvider";
+import SocialLogin from "../../Pages/Home/SocialLogin/SocialLogin";
 
+ 
 
 
 const router=createBrowserRouter([
     {
         path:'/',
         element:<Root></Root>,
+        errorElement:<NotFound></NotFound>,
         children:[
             {
                 path:'/',
@@ -64,10 +69,19 @@ const router=createBrowserRouter([
             {
                 path:'slider',
                 element:<Slider></Slider>
+            },
+            {
+                path:'firebase',
+                element:<FirebaseProvider></FirebaseProvider>
+            },
+            {
+                path:'socialLogin',
+                element:<SocialLogin></SocialLogin>
             }
            
           
         ]
     }
 ]);
+
 export default router;
