@@ -14,6 +14,7 @@ import Slider from "../../Pages/Home/Slider/Slider";
 import NotFound from "../../Pages/Home/NotFound/NotFound";
 import FirebaseProvider from "../../FirebaseProvider/FirebaseProvider";
 import SocialLogin from "../../Pages/Home/SocialLogin/SocialLogin";
+import PrivateRoute from "../../Pages/Home/PrivateRoute/PrivateRoute";
 
  
 
@@ -47,7 +48,9 @@ const router=createBrowserRouter([
             },
             {
                 path:'/:id',
-                element:<CardDetails></CardDetails>,
+                element:<PrivateRoute>
+                    <CardDetails></CardDetails>
+                </PrivateRoute>,
                 loader : ()=> fetch(`/FakeData.json`)
             },
             {
