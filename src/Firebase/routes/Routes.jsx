@@ -49,7 +49,7 @@ const router=createBrowserRouter([
             {
                 path:'/:id',
                 element:<PrivateRoute>
-                    <CardDetails></CardDetails>
+                    <CardDetails/>
                 </PrivateRoute>,
                 loader : ()=> fetch(`/FakeData.json`)
             },
