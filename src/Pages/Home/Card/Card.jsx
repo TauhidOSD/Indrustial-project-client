@@ -13,7 +13,7 @@ const Card = () => {
   console.log(Cards);
   
   return (
-    <div className="  grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  gap-4 ">
+    <div className="  grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  gap-4 mt-10 ">
       {Cards.map((Card) => (
         // <Blog key={Card.id} Card={Card}></Blog>
 		<div key={Card.id} className=" rounded-md shadow-md dark:bg-gray-50 dark:text-gray-800 ">

@@ -1,0 +1,24 @@
+.slide {
+    color: white;
+    height: 90vh ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+.slide1 {
+    background-image: url(https://i.postimg.cc/nzQpsF1y/aerial-view-of-petrochemical-industry-refinery-in-the-morning-background-energy-industrial-plant-oil.jpg); 
+}
+
+.slide2 {
+    background-image: url(https://i.postimg.cc/gJGn86nC/pngtree-an-oil-refinery-is-lit-in-the-evening-image-13113437.jpg); 
+}
+
+.slide3 {
+    background-image: url(https://i.postimg.cc/D0BfqCts/desktop-wallpaper-indonesia-will-no-longer-shoulder-costs-for-oil-exploration-oil-and-gas.jpg);
+}

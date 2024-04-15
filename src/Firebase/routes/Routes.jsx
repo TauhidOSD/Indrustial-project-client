@@ -15,6 +15,7 @@ import NotFound from "../../Pages/Home/NotFound/NotFound";
 import FirebaseProvider from "../../FirebaseProvider/FirebaseProvider";
 import SocialLogin from "../../Pages/Home/SocialLogin/SocialLogin";
 import PrivateRoute from "../../Pages/Home/PrivateRoute/PrivateRoute";
+// 
 
  
 
@@ -80,7 +81,12 @@ const router=createBrowserRouter([
             {
                 path:'socialLogin',
                 element:<SocialLogin></SocialLogin>
-            }
+            },
+            // {
+            //     path:'imgSlider',
+            //     element:<imgSlider></imgSlider>
+            // },
+            
            
           
         ]
