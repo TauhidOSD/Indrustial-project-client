@@ -6,7 +6,7 @@ import Login from "../../Pages/Home/Login/Login";
 import Register from "../../Pages/Home/Register/Register";
 import Card from "../../Pages/Home/Card/Card";
 import CardDetails from "../../Pages/Home/CardDetails/CardDetails";
-import Update from "../../Pages/Home/User/User";
+import Update from "../../Pages/Home/UpdateProfile/UpdateProfile";
 import User from "../../Pages/Home/Contact/Contact";
 import Banner from "../../Pages/Home/Banner/Banner";
 import Footer from "../../Pages/Home/Footer/Footer";
@@ -15,7 +15,11 @@ import NotFound from "../../Pages/Home/NotFound/NotFound";
 import FirebaseProvider from "../../FirebaseProvider/FirebaseProvider";
 import SocialLogin from "../../Pages/Home/SocialLogin/SocialLogin";
 import PrivateRoute from "../../Pages/Home/PrivateRoute/PrivateRoute";
-// 
+//
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
+AOS.init();
 
  
 

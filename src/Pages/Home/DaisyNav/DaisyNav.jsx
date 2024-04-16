@@ -28,7 +28,7 @@ const DaisyNav = () => {
         <NavLink to="/">Home</NavLink>
       </li>
       <li className="mr-3">
-        <NavLink to="/Update">User Info</NavLink>
+        <NavLink to="/Update">Update Profile</NavLink>
       </li>
       <li>
         <NavLink to="/User">Contact Us</NavLink>

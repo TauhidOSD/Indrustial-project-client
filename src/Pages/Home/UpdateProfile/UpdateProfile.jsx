@@ -1,14 +1,14 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 
-const User = () => {
+const UpdateProfile = () => {
     return (
         <div>
             <Helmet>
-                <title>Indrusto || User</title>
+                <title>Indrusto || Update profile</title>
             </Helmet>
         </div>
     );
 };
 
-export default User;
+export default UpdateProfile;

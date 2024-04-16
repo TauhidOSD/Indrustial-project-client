@@ -13,10 +13,10 @@ const Card = () => {
   console.log(Cards);
   
   return (
-    <div className="  grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  gap-4 mt-10 ">
+    <div  className="  grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  gap-4 mt-10 ">
       {Cards.map((Card) => (
         // <Blog key={Card.id} Card={Card}></Blog>
-		<div key={Card.id} className=" rounded-md shadow-md dark:bg-gray-50 dark:text-gray-800 ">
+		<div data-aos="zoom-in" data-aos-duration="3000" key={Card.id} className=" rounded-md shadow-md dark:bg-gray-50 dark:text-gray-800 ">
           <img
             src={Card?.image}
             alt=""
@@ -39,7 +39,7 @@ const Card = () => {
             <Link to={`/${Card?.id}`}>
             <button 
               type="button"
-              className="bg-pink-500 flex items-center justify-center w-full p-3 font-semibold tracking-wide rounded-md dark:bg-violet-600 dark:text-gray-50"
+              className="   bg-pink-500 flex items-center justify-center w-full p-3 font-semibold tracking-wide rounded-md dark:bg-violet-600 dark:text-gray-50"
               fdprocessedid="led2je"
             >
               Read more

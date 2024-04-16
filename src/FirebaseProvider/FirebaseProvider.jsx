@@ -23,6 +23,7 @@ useEffect(() => {
   const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
     setUser(currentUser);
     setLoader(false);
+    setLoading(false);
   });
   return () => {
     return unsubscribe();
@@ -31,21 +32,22 @@ useEffect(() => {
 // console.log(user);
 //  register with email and pass
 const createUser = (email, password) => {
+  console.log(email,password)
   setLoader(true);
   setLoading(true)
   return createUserWithEmailAndPassword(auth, email, password);
 };
-const updateUserData = (user, name, photo) => {
-  updateProfile(user, {
+const updateUserData = ( name, photo) => {
+ return updateProfile(auth.currentUser, {
     displayName: name,
     photoURL: photo,
   })
-    .then(() => {
-      alert("Successfull");
-    })
-    .catch((error) => {
-      console.log(error.message);
-    });
+    // .then(() => {
+    //   alert("Successfull");
+    // })
+    // .catch((error) => {
+    //   console.log(error.message);
+    // });
 };
 // login with email & pass
 const login = (email, password) => {
@@ -71,23 +73,21 @@ const googleLogin = (provider) => {
   return signInWithPopup(auth,GitHubProvider)
  }
  //logOut
- const logOut=()=>{
-  signOut(auth)
- }
+ 
  
 
 
  
  console.log(user);
- useEffect(()=>{
- const unSubscribe= onAuthStateChanged(auth, (user) => {
-    if (user) {
-      setUser(user)
-      setLoading(false)
-    }
-  });
-  return ()=>unSubscribe()
- },[])
+//  useEffect(()=>{
+//  const unSubscribe= onAuthStateChanged(auth, (user) => {
+//     if (user) {
+//       setUser(user)
+//       setLoading(false)
+//     }
+//   });
+//   return ()=>unSubscribe()
+//  },[])
 
 
     const allValues ={
