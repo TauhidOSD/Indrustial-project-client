@@ -24,14 +24,14 @@ const DaisyNav = () => {
 
   const links = (
     <>
-      <li>
+      <li className="mr-3">
         <NavLink to="/">Home</NavLink>
       </li>
-      <li>
-        <NavLink to="/Update">Update Profile</NavLink>
+      <li className="mr-3">
+        <NavLink to="/Update">User Info</NavLink>
       </li>
       <li>
-        <NavLink to="/User">User Profile</NavLink>
+        <NavLink to="/User">Contact Us</NavLink>
       </li>
     </>
   );

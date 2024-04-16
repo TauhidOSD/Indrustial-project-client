@@ -98,7 +98,7 @@ const Login = () => {
     return (
         <div className="mt-10 mb-10">
             <Helmet>
-                <title>Login</title>
+                <title>Indrusto || Login</title>
             </Helmet>
             <div className="hero-content">
 

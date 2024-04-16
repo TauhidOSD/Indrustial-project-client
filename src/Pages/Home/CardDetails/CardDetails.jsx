@@ -19,7 +19,7 @@ const CardDetails = () => {
   return (
     <div>
       <Helmet>
-        <title>Details</title>
+        <title>Indrusto || Details</title>
       </Helmet>
       <div>
         <div className="w-full mb-10">

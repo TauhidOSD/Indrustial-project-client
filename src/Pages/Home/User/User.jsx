@@ -5,7 +5,7 @@ const User = () => {
     return (
         <div>
             <Helmet>
-                <title>User profile</title>
+                <title>Indrusto || Contact</title>
             </Helmet>
            <h2 className="text-3xl">This is User page</h2> 
         </div>
