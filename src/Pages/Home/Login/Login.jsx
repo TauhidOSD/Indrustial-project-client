@@ -7,6 +7,7 @@ import { GoogleAuthProvider } from "firebase/auth";
 import Swal from 'sweetalert2'
 import { AuthContext } from "../../../FirebaseProvider/FirebaseProvider";
 import { GithubAuthProvider } from "firebase/auth/cordova";
+import { Helmet } from "react-helmet-async";
 
 const Login = () => {
     
@@ -96,6 +97,9 @@ const Login = () => {
 
     return (
         <div className="mt-10 mb-10">
+            <Helmet>
+                <title>Login</title>
+            </Helmet>
             <div className="hero-content">
 
                 <div className="card w-full max-w-sm shadow-2xl bg-base-100">

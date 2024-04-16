@@ -4,6 +4,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import toast from "react-hot-toast";
 import { AuthContext } from "../../../FirebaseProvider/FirebaseProvider";
+import { Helmet } from "react-helmet-async";
 
 const Register = () => {
   const { createUser, updateUserData } = useContext(AuthContext);
@@ -56,6 +57,9 @@ const Register = () => {
 
   return (
     <div className="mt-10 mb-10">
+      <Helmet>
+        <title>Register</title>
+      </Helmet>
       <div className="hero-content">
         <div className="card w-full max-w-sm shadow-2xl bg-base-100">
           <div className="card-body">

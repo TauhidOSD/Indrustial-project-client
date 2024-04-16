@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Helmet } from "react-helmet-async";
 import { Link, useLoaderData, useParams } from "react-router-dom";
 
 const CardDetails = () => {
@@ -17,6 +18,9 @@ const CardDetails = () => {
   console.log(data);
   return (
     <div>
+      <Helmet>
+        <title>Details</title>
+      </Helmet>
       <div>
         <div className="w-full mb-10">
           <div className=" lg:w-[60%] md:w-full mx-auto  rounded-md shadow-md dark:bg-gray-50 dark:text-gray-800">
