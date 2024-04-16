@@ -17,8 +17,8 @@ const FirebaseProvider = ({children}) => {
    
   const [user, setUser] = useState(null);
   const [loader, setLoader] = useState(true);
-
-
+ const [loading,setLoading]=useState(true)
+ console.log(loading)
 useEffect(() => {
   const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
     setUser(currentUser);
@@ -32,6 +32,7 @@ useEffect(() => {
 //  register with email and pass
 const createUser = (email, password) => {
   setLoader(true);
+  setLoading(true)
   return createUserWithEmailAndPassword(auth, email, password);
 };
 const updateUserData = (user, name, photo) => {
@@ -49,20 +50,24 @@ const updateUserData = (user, name, photo) => {
 // login with email & pass
 const login = (email, password) => {
   setLoader(true);
+  setLoading(true)
   return signInWithEmailAndPassword(auth, email, password);
 };
 // logOut
 const logout = () => {
   setLoader(true);
+  
   return signOut(auth);
 };
 // google login
 const googleLogin = (provider) => {
   setLoader(true);
+  setLoading(true)
   return signInWithPopup(auth,provider);
 };
  //GitHub login
  const GitHubLogin=()=>{
+  setLoading(true)
   return signInWithPopup(auth,GitHubProvider)
  }
  //logOut
@@ -75,11 +80,13 @@ const googleLogin = (provider) => {
  
  console.log(user);
  useEffect(()=>{
-  onAuthStateChanged(auth, (user) => {
+ const unSubscribe= onAuthStateChanged(auth, (user) => {
     if (user) {
       setUser(user)
+      setLoading(false)
     }
   });
+  return ()=>unSubscribe()
  },[])
 
 
@@ -95,6 +102,7 @@ const googleLogin = (provider) => {
     login,
     logout,
     googleLogin,
+    loading
       // logOut,
       // user,
       
