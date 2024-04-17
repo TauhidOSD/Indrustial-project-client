@@ -4,9 +4,13 @@ import { AuthContext } from '../../../FirebaseProvider/FirebaseProvider';
 
 const UpdateProfile = () => {
   const {  updateUserData } = useContext(AuthContext);
-  const handleUpdate = (data)=>{
+  const handleUpdate = (e)=>{
+    console.log(e);
+    e.preventDefault();
+    const name = e.target.name.value
+const photo = e.target.photo.value
      
-    updateUserData (data.name,data.photo)
+    updateUserData (name,photo)
     .then(()=>{
       
     })

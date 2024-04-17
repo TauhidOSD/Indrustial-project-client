@@ -27,9 +27,7 @@ const DaisyNav = () => {
       <li className="mr-3">
         <NavLink to="/">Home</NavLink>
       </li>
-      {/* <li className="mr-3">
-        <NavLink to="/Update">Update Profile</NavLink>
-      </li> */}
+
       <li>
         <NavLink to="/Profile">User Profile</NavLink>
       </li>
@@ -63,51 +61,46 @@ const DaisyNav = () => {
             {links}
           </ul>
         </div>
-        <a className="btn btn-ghost text-2xl md:text-4xl font-bold  ">Indrusto</a>
+        <a className="btn btn-ghost text-2xl md:text-4xl font-bold  ">
+          Indrusto
+        </a>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{links}</ul>
       </div>
-    
-        {/* <div className="navbar-end">
-          <Link to={"/Login"} className="btn bg-pink-500 text-2xl">
+
+      <div className="navbar-end flex">
+        <label className="mr-5">
+          {user && (
+            <div
+              className="tooltip  tooltip-bottom"
+              data-tip={user?.displayName}
+            >
+              <img
+                style={{ width: "50px" }}
+                className="w-50 rounded-full circle"
+                src={user?.photoURL}
+              />
+            </div>
+          )}
+        </label>
+        {user ? (
+          <button
+            onClick={handleLogOut}
+            className="btn btn-outline btn-error text-white font-bold"
+          >
+            LogOut
+          </button>
+        ) : (
+          <Link
+            to="/login"
+            className="btn btn-outline btn-error text-white font-bold"
+          >
             Login
           </Link>
-        </div> */}
-        <div className="navbar-end flex">
-          
-          <label className="mr-5">
-            {user && (
-              <div
-                className="tooltip  tooltip-bottom"
-                data-tip={user?.displayName}
-              >
-                <img
-                  style={{ width: "50px" }}
-                  className="w-50 rounded-full circle"
-                  src={user?.photoURL}
-                />
-              </div>
-            )}
-          </label>
-          {user ? (
-            <button
-              onClick={handleLogOut}
-              className="btn btn-outline btn-error text-white font-bold"
-            >
-              LogOut
-            </button>
-          ) : (
-            <Link
-              to="/login"
-              className="btn btn-outline btn-error text-white font-bold"
-            >
-              Login
-            </Link>
-          )}
-        </div>
+        )}
       </div>
-    
+    </div>
   );
 };
 
