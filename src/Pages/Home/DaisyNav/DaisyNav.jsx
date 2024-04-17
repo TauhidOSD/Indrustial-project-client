@@ -63,7 +63,7 @@ const DaisyNav = () => {
             {links}
           </ul>
         </div>
-        <a className="btn btn-ghost text-4xl font-bold  ">Indrusto</a>
+        <a className="btn btn-ghost text-2xl md:text-4xl font-bold  ">Indrusto</a>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{links}</ul>
