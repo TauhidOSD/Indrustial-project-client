@@ -1,5 +1,5 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { FaGoogle } from "react-icons/fa";
+import { FaEye, FaEyeSlash, FaGoogle } from "react-icons/fa";
 import { useContext, useState } from "react";
 
 import { GoogleAuthProvider } from "firebase/auth";
@@ -116,7 +116,7 @@ const Login = () => {
                   required
                 />
               </div>
-              <div className="form-control">
+              <div className="form-control relative ">
                 <label className="label">
                   <span className="label-text">Password</span>
                 </label>
@@ -127,16 +127,17 @@ const Login = () => {
                   className="input input-bordered"
                   required
                 />
-              </div>
-              <p className="mt-2" onClick={() => setShow(!show)}>
+                <p className="mt-2 absolute right-2 top-[45px]" onClick={() => setShow(!show)}>
                 <span className=" font-bold ">
-                  {show ? (
-                    <span>Hide Password</span>
-                  ) : (
-                    <span>Show Password</span>
-                  )}
+                  {show ? <FaEyeSlash></FaEyeSlash> : <FaEye></FaEye> }
                 </span>
               </p>
+              </div>
+              {/* <p className="mt-2" onClick={() => setShow(!show)}>
+                <span className=" font-bold ">
+                  {show ? <FaEyeSlash></FaEyeSlash> : <FaEye></FaEye> }
+                </span>
+              </p> */}
               <p className="text-green-700">{success}</p>
               <br />
               <p className="text-red-700 ">{error}</p>
