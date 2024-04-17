@@ -31,6 +31,9 @@ const DaisyNav = () => {
       <li>
         <NavLink to="/Profile">User Profile</NavLink>
       </li>
+      <li className="ml-3">
+        <NavLink to="/GoogleMap">Google Map</NavLink>
+      </li>
     </>
   );
 

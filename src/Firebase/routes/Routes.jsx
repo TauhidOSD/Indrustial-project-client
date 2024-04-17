@@ -19,6 +19,7 @@ import 'aos/dist/aos.css';
 import Profile from "../../Pages/Home/Profile/Profile";
 import PrivateRout from "./PrivateRout";
 import UpdateProfile from "../../Pages/Home/UpdateProfile/UpdateProfile";
+import GoogleMap from "../../Pages/Home/GooleMap/GoogleMap";
 
 AOS.init();
 
@@ -96,6 +97,10 @@ const router=createBrowserRouter([
            {
             path:"updateProfile",
             element:<UpdateProfile></UpdateProfile>
+           },
+           {
+            path:"GoogleMap",
+            element:<GoogleMap></GoogleMap>
            }
            
           
