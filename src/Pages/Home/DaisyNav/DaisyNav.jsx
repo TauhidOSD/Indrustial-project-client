@@ -31,7 +31,7 @@ const DaisyNav = () => {
         <NavLink to="/Update">Update Profile</NavLink>
       </li>
       <li>
-        <NavLink to="/User">Contact Us</NavLink>
+        <NavLink to="/Profile"> Profile</NavLink>
       </li>
     </>
   );

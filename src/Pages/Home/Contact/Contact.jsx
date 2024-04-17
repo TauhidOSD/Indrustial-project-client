@@ -5,7 +5,7 @@ const Contact = () => {
     return (
         <div>
             <Helmet>
-                <title>Indrusto || Contact</title>
+                <title>Indrusto || User profile</title>
             </Helmet>
         </div>
     );

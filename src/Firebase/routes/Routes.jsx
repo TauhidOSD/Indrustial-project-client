@@ -18,6 +18,7 @@ import PrivateRoute from "../../Pages/Home/PrivateRoute/PrivateRoute";
 //
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import Profile from "../../Pages/Home/Profile/Profile";
 
 AOS.init();
 
@@ -86,11 +87,10 @@ const router=createBrowserRouter([
                 path:'socialLogin',
                 element:<SocialLogin></SocialLogin>
             },
-            // {
-            //     path:'imgSlider',
-            //     element:<imgSlider></imgSlider>
-            // },
-            
+           {
+            path:'profile',
+            element:<Profile></Profile>
+           },
            
           
         ]
