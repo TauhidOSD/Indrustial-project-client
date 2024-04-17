@@ -19,6 +19,8 @@ import PrivateRoute from "../../Pages/Home/PrivateRoute/PrivateRoute";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Profile from "../../Pages/Home/Profile/Profile";
+import PrivateRout from "./PrivateRout";
+import UpdateProfile from "../../Pages/Home/UpdateProfile/UpdateProfile";
 
 AOS.init();
 
@@ -54,15 +56,15 @@ const router=createBrowserRouter([
             },
             {
                 path:'/:id',
-                element:<PrivateRoute>
+                element:<PrivateRout>
                     <CardDetails/>
-                </PrivateRoute>,
+                </PrivateRout>,
                 loader : ()=> fetch(`/FakeData.json`)
             },
-            {
-                path:'Update',
-                element:<Update></Update>
-            },
+            // {
+            //     path:'Update',
+            //     element:<Update></Update>
+            // },
             {
                 path:'User',
                 element:<User></User>
@@ -89,8 +91,14 @@ const router=createBrowserRouter([
             },
            {
             path:'profile',
-            element:<Profile></Profile>
+            element:<PrivateRout>
+                <Profile></Profile>
+            </PrivateRout>
            },
+           {
+            path:"updateProfile",
+            element:<UpdateProfile></UpdateProfile>
+           }
            
           
         ]

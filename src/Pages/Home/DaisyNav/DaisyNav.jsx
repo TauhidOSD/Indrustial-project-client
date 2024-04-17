@@ -27,11 +27,11 @@ const DaisyNav = () => {
       <li className="mr-3">
         <NavLink to="/">Home</NavLink>
       </li>
-      <li className="mr-3">
+      {/* <li className="mr-3">
         <NavLink to="/Update">Update Profile</NavLink>
-      </li>
+      </li> */}
       <li>
-        <NavLink to="/Profile"> Profile</NavLink>
+        <NavLink to="/Profile">User Profile</NavLink>
       </li>
     </>
   );

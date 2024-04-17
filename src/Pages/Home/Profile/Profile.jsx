@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { AuthContext } from "../../../FirebaseProvider/FirebaseProvider";
+import { Link } from "react-router-dom";
 
 const Profile = () => {
   const { user } = useContext(AuthContext);
@@ -9,7 +10,7 @@ const Profile = () => {
   // console.log(user)
   return (
     <div className="flex justify-center items-center h-screen">
-      <div className="bg-white shadow-lg rounded-2xl w-3/5">
+      <div className="bg-white shadow-lg rounded-2xl w-3/5 h-[60%]">
         <img
           alt="profile"
           src="https://wallpapercave.com/wp/wp10784415.jpg"
@@ -24,12 +25,8 @@ const Profile = () => {
             />
           </a>
 
-          <p className="p-2 px-4 text-xs text-white bg-pink-500 rounded-full">
-            
-          </p>
-          <p className="mt-2 text-xl font-medium text-gray-800 ">
-           
-          </p>
+          
+          
           <div className="w-full p-2 mt-4 rounded-lg">
             <div className="flex flex-wrap items-center justify-between text-sm text-gray-600 ">
               <p className="flex flex-col">
@@ -44,9 +41,12 @@ const Profile = () => {
               </p>
 
               <div>
+                <Link to="/updateProfile">
                 <button className="bg-[#F43F5E] px-10 py-1 rounded-lg text-white cursor-pointer hover:bg-[#af4053] block mb-1">
                   Update Profile
                 </button>
+                </Link>
+                
                 <button className="bg-[#F43F5E] px-7 py-1 rounded-lg text-white cursor-pointer hover:bg-[#af4053]">
                   Change Password
                 </button>
