@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { AuthContext } from "../../../FirebaseProvider/FirebaseProvider";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 const Profile = () => {
   const { user } = useContext(AuthContext);
@@ -9,7 +10,11 @@ const Profile = () => {
 
   // console.log(user)
   return (
+    
     <div className="flex justify-center mt-8 h-screen">
+      <Helmet>
+        <title>Indeusto || user profile</title>
+      </Helmet>
       <div className="bg-white shadow-lg rounded-2xl w-3/5 h-[65%] ">
         <img
           alt="profile"

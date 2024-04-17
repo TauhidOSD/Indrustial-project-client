@@ -1,10 +1,15 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Helmet } from 'react-helmet-async';
+import { AuthContext } from '../../../FirebaseProvider/FirebaseProvider';
 
 const UpdateProfile = () => {
-
-  const handleUpdate = ()=>{
- 
+  const {  updateUserData } = useContext(AuthContext);
+  const handleUpdate = (data)=>{
+     
+    updateUserData (data.name,data.photo)
+    .then(()=>{
+      
+    })
   }
     return (
         <div>

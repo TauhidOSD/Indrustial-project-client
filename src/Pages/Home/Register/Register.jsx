@@ -7,7 +7,7 @@ import { Helmet } from "react-helmet-async";
 import { AuthContext } from "../../../FirebaseProvider/FirebaseProvider";
 
 const Register = () => {
-  const { createUser, updateUserData } = useContext(AuthContext);
+  const { createUser } = useContext(AuthContext);
 
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
