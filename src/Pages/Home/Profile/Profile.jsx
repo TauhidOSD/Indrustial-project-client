@@ -15,7 +15,7 @@ const Profile = () => {
       <Helmet>
         <title>Indeusto || user profile</title>
       </Helmet>
-      <div className="bg-white shadow-lg rounded-2xl w-3/5 h-[65%] ">
+      <div className="bg-white shadow-lg rounded-2xl w-3/5 h-[75%] ">
         <img
           alt="profile"
           src="https://i.postimg.cc/JnDqSG36/360-F-438556946-UKup-Zv-Zr-Czbf-Ixawj8-P57ho-DSl7ypza9.jpg "
