@@ -7,7 +7,7 @@ Currently, two official plugins are available:
 - [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 # Indrusto 
-LiveUrl:(https://ornate-starlight-dbaa18.netlify.app/)
+LiveUrl:(https://clever-kheer-0e7947.netlify.app/)
 Comprehensive Industry Insights
 Interactive Forums and Communities
 Product Showcase and Reviews
